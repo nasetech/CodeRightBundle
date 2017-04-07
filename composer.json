@@ -1,0 +1,31 @@
+{
+  "name": "nasetech/coderight-bundle",
+  "description": "A bundle to create basic functional symfony code",
+  "keywords": ["util"],
+  "type": "symfony-bundle",
+  "authors": [
+  {
+     "name": "Nasetech CodeRight Bundle",
+     "homepage": "https://github.com/nasetech/CodeRightBundle"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+      "php": ">=5.5.9",
+      "symfony/symfony": "3.1.*",
+      "doctrine/orm": "^2.5",
+      "doctrine/doctrine-bundle": "^1.6",
+      "doctrine/doctrine-cache-bundle": "^1.2",
+      "symfony/swiftmailer-bundle": "^2.3",
+      "symfony/monolog-bundle": "~2.11.3",
+      "symfony/polyfill-apcu": "^1.0",
+      "sensio/distribution-bundle": "^5.0",
+      "sensio/framework-extra-bundle": "^3.0.2",
+      "incenteev/composer-parameter-handler": "^2.0",
+      "friendsofsymfony/user-bundle": "~2.0@dev",
+      "friendsofsymfony/rest-bundle": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {"Nasetech\\CodeRightBundle\\": ""}
+  }
+}

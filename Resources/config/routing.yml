@@ -1,0 +1,7 @@
+coderightano:
+    resource: '@NasetechCodeRightBundle/Controller/'
+    type: annotation
+    prefix: /
+coderight:
+    type: rest
+    resource: Nasetech\CodeRightBundle\Controller\GeneratorController

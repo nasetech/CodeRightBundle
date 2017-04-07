@@ -1,0 +1,230 @@
+Tranz\BMAUserOrderBundle\Entity\AdvUserOrder:
+    type: entity
+    table: adv_user_order
+    indexes:
+        pro_id:
+            columns:
+                - pro_id
+        vchr_id:
+            columns:
+                - vchr_id
+        user_id:
+            columns:
+                - user_id
+        user_name:
+            columns:
+                - user_name
+        user_account:
+            columns:
+                - user_account
+        user_mobile:
+            columns:
+                - user_mobile
+        org_id:
+            columns:
+                - org_id
+        org_name:
+            columns:
+                - org_name
+    uniqueConstraints:
+        uid_UNIQUE:
+            columns:
+                - uid
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        uid:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+        userId:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        userName:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: user_name
+        userAccount:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: user_account
+        userMobile:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+            column: user_mobile
+        orgId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 机构id
+            column: org_id
+        orgName:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: org_name
+        proId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: '对应优惠定义table adv_promotion的id'
+            column: pro_id
+        proName:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+                comment: '对应优惠定义table adv_promotion的name'
+            column: pro_name
+        vchrId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: '对应优惠券table adv_voucher的id'
+            column: vchr_id
+        qrcodeOwnerId:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+            column: qrcode_owner_id
+        qrcodeOwnerName:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: qrcode_owner_name
+        transId:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+                comment: '对应transaction 的id'
+            column: trans_id
+        deviceId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: '扫码 device 的id'
+            column: device_id
+        status:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+                comment: '状态为(N)ew, (S)uccess成功, (F)失败'
+        originalPrice:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            options:
+                comment: 原价格
+            column: original_price
+        discountPrice:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            options:
+                comment: 折扣价格
+            column: discount_price
+        orgPrice:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            options:
+                comment: 商家实付价格
+            column: org_price
+        platformPrice:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 2
+            options:
+                comment: 平台优惠贴补价格
+            column: platform_price
+        name:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        detail:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        channel:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+                comment: '订单来源, wechat, alipay'
+        isDeleted:
+            type: string
+            nullable: true
+            length: 1
+            options:
+                fixed: true
+                comment: '是否删除，(Y)es已删除, (N)o未删除'
+            column: is_deleted
+        createdBy:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            column: created_by
+        createdTime:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: created_time
+        updatedBy:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            column: updated_by
+        updatedTime:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: updated_time
+    lifecycleCallbacks: {  }

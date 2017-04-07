@@ -1,0 +1,7 @@
+tranz_bma_user_order_homepage:
+    path:     /
+    defaults: { _controller: TranzBMAUserOrderBundle:Default:index }
+
+advuserorder:
+    type: rest
+    resource: "Tranz\\BMAUserOrderBundle\\Controller\\AdvUserOrderController"
